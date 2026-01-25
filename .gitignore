@@ -8,3 +8,5 @@ results/*
 .idea
 
 __pycache__
+
+.vscode

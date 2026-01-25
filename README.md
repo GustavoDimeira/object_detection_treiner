@@ -49,6 +49,8 @@ This repository provides a framework to automate the training and evaluation of 
 Run the installation scripts located in the `instalations/` directory to set up the environment and install dependencies like MMDetection, PyTorch, and MMCV.
 
 ```bash
+conda create --name detectores python=3.8 -y
+conda activate detectores
 bash instalations/install.sh
 ```
 
