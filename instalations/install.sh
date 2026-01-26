@@ -15,6 +15,7 @@ mim install mmengine
 mim install "mmcv==1.3.17"
 mim install "mmdet==2.28.2"
 pip install yapf==0.40.1
+pip install torch
 
 echo "====================================================="
 echo "Installation completed!"

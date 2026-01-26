@@ -19,11 +19,13 @@ class LoadingBar():
 
         print('\n', titleMsg, '\n' * (len(self.extraInfos) + 1))
         self.prevWidth = width
-        self.updateBar(0)
 
     def updateBar(self, crrStep: int):
         width, _ = shutil.get_terminal_size()
         clearKLines(math.ceil((self.prevWidth * .85) / width) + len(self.extraInfos))
+
+        if (crrStep == 1): clearKLines(math.ceil((self.prevWidth * .85) / width) + len(self.extraInfos))
+
         self.prevWidth = width
 
         crrPerc = crrStep / self.steps

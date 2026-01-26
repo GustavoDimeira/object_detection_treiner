@@ -49,16 +49,17 @@ This repository provides a framework to automate the training and evaluation of 
 Run the installation scripts located in the `instalations/` directory to set up the environment and install dependencies like MMDetection, PyTorch, and MMCV.
 
 ```bash
-conda create --name detectores python=3.8 -y
+conda create --name detectores python=3.9 -y
 conda activate detectores
 bash instalations/install.sh
 ```
 
 
 ### 2. Dataset Preparation
-- Place your dataset images in a designated folder.
-- Ensure your annotations are in COCO format (`.json`).
-- Structure your dataset and create data folds as expected by the scripts in `src/dataset/`. The code automatically discovers classes from your `_annotations.coco.json` file.
+- Download your dataset from Roboflow using annotation format COCO-MMDetection
+- Unzip the file at `/src/dataset`
+- Run the code, preprocess_dataset.py, passing the desired variables
+
 
 ### 3. Configure the Experiment
 Open `src/experiment_config/hyper_parameters.py` to define the scope of your experiments:
@@ -69,6 +70,7 @@ Open `src/experiment_config/hyper_parameters.py` to define the scope of your exp
 - **`EPOCHS`**: Set the maximum number of training epochs.
 - **`EARLY_STOP`**: Set to `True` to enable early stopping.
 
+
 ### 4. Run the Training
 Execute the main script to start the automated training process. The script will iterate through all combinations of parameters defined in the previous step.
 
@@ -77,6 +79,7 @@ python src/main.py
 ```
 
 The results, including logs and the best model checkpoint for each experiment, will be saved in the `results/` directory (created automatically), organized by fold and hyperparameter combination.
+
 
 ## Evaluation
 The `src/scripts/evaluate_model.py` script can be used to assess the performance of a trained model. Although its execution is currently commented out in `main.py`, it is fully functional and provides a robust way to calculate accuracy metrics on a test set.

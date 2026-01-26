@@ -1,6 +1,10 @@
 mmdetection
+dataset/train
 dataset/annotation
 dataset/folds
+dataset/newDataSet
+**/*.jpg
+**/*.png
 results/*
 
 .RData

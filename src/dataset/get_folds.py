@@ -2,6 +2,10 @@ import argparse, random, os, json, funcy, shutil
 from pycocotools.coco import COCO
 from sklearn.model_selection import train_test_split
 
+# ==========================
+# Argument Parser
+# ==========================
+
 parser = argparse.ArgumentParser()
 
 foldsHelp = "Define on how many folds your dataset will be splited"
